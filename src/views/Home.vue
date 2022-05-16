@@ -1,10 +1,7 @@
 <template>
   <div>
-    <transition name="el-zoom-in-top">
-      <div v-if="show">aaa</div>
-    </transition>
-
-    <el-button @click="toggleS">toggle</el-button>
+    
+    这是测试test
   </div>
 </template>
 
