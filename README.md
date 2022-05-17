@@ -15,8 +15,8 @@ npm run serve
 npm run build
 ```
 
-### 配置说明
-点击查看 [配置说明](https://cli.vuejs.org/config/)
+### 在线演示
+点击查看 [在线演示](https://xueyueshuai.github.io/t/web_dist)
 
 ##  todo-list
 - 中英文
