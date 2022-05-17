@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import exampleView from "@/components/exampleView/index.vue";
 
 
 import ElementUI from 'element-ui';
@@ -20,6 +21,8 @@ Vue.directive('highlight', {
     hljs.highlightElement(el)
   }
 })
+
+Vue.component('exampleView', exampleView)
 
 new Vue({
   router,

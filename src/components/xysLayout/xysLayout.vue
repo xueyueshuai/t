@@ -114,9 +114,10 @@ export default {
       background: #fff;
     }
     .xysLayout-body {
-      background: #f5f5f5;
+      background: #fff;
       width: 100%;
       height: calc(100vh - 115px);
+      overflow-y: auto;
     }
   }
 }

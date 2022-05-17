@@ -1,26 +1,19 @@
 <template>
-  <el-tabs type="card">
-    <el-tab-pane label="效果" name="first">
-      <demoCode />
-    </el-tab-pane>
-    <el-tab-pane label="代码" name="second">
-      <pre
-       style="height:500px;overflow:auto"
-        v-highlight
-      >{{ code }}</pre>
-    </el-tab-pane>
-  </el-tabs>
+  <exampleView :code="code">
+    <demoCode slot="component" />
+  </exampleView>
 </template>
 
 <script>
 import demoCode from "./code.vue";
+let code = require("!../../vueSourceLoader.js!./code.vue").default;
 export default {
   components: {
     demoCode,
   },
   data() {
     return {
-        code:require("!../../vueSourceLoader.js!./code.vue").default
+      code: code,
     };
   },
 };
