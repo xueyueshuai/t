@@ -7,15 +7,14 @@
         {{ showXiaoguo ? "隐藏" : "显示" }}
       </el-button>
     </el-divider>
-    <br>
+    <div style="height:5px"></div>
 
     <transition name="fade">
       <div v-show="showXiaoguo">
         <slot name="component"></slot>
       </div>
     </transition>
-
-    <br>
+    <div style="height:5px"></div>
     <el-divider>
       <span>code</span>
       &nbsp;
