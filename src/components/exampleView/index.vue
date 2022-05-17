@@ -1,19 +1,34 @@
 <template>
   <div class="exampleView">
-    <slot name="component"></slot>
+    <el-divider>
+      <span>效果</span>
+      &nbsp;
+      <el-button size="small" type="text" @click="showXiaoguo = !showXiaoguo">
+        {{ showXiaoguo ? "隐藏" : "显示" }}
+      </el-button>
+    </el-divider>
+    <br>
+
+    <transition name="fade">
+      <div v-show="showXiaoguo">
+        <slot name="component"></slot>
+      </div>
+    </transition>
+
+    <br>
     <el-divider>
       <span>code</span>
       &nbsp;
-      <el-button size="small" type="text" @click="show = !show">
-        {{ show ? "隐藏" : "显示" }}
+      <el-button size="small" type="text" @click="showCode = !showCode">
+        {{ showCode ? "隐藏" : "显示" }}
       </el-button>
 
       <el-button size="small" type="text" @click="copy"> copy </el-button>
     </el-divider>
 
     <transition name="fade">
-      <div v-show="show">
-        <pre v-highlight>{{code}}</pre>
+      <div v-show="showCode">
+        <pre v-highlight>{{ code }}</pre>
       </div>
     </transition>
   </div>
@@ -31,7 +46,8 @@ export default {
   },
   data() {
     return {
-      show: false,
+      showXiaoguo: true,
+      showCode: false,
     };
   },
   methods: {
