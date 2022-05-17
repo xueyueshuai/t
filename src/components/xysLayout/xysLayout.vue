@@ -54,7 +54,7 @@
 
 <script>
 import xysLayoutLeft from "./left/index.vue";
-import xysTabs from "./tabs.vue";
+import xysTabs from "./right/tabs.vue";
 export default {
   components: {
     xysLayoutLeft,
@@ -117,7 +117,6 @@ export default {
       background: #f5f5f5;
       width: 100%;
       height: calc(100vh - 115px);
-      padding: 12px;
     }
   }
 }

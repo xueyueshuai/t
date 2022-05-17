@@ -1,11 +1,9 @@
 <template>
   <div>
     <fieldset>
-      <legend>aa</legend>
-      内容
+      <legend>About us</legend>
+      This is an about page : {{ $route.path }}
     </fieldset>
-    This is an about page
-    {{ $route.path }}
   </div>
 </template>
 

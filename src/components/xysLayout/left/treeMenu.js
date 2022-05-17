@@ -36,7 +36,7 @@ const treeMenu = {
                     slot: "title",
                   },
                   [
-                    <i class="el-icon-location"></i>,
+                    route.icon ? <i class={route.icon}></i> : null,
                     <span slot="title">{route.name}</span>
                   ]
                 ),
@@ -52,7 +52,7 @@ const treeMenu = {
                 },
               },
               [
-                route.icon ? <i class="el-icon-menu"></i> : null,
+                route.icon ? <i class={route.icon}></i> : null,
                 <span slot="title">{route.name}</span>
               ]
             );
