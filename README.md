@@ -1,4 +1,4 @@
-# t
+# xys-t-project
 
 ## Project setup
 ```

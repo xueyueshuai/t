@@ -3,7 +3,8 @@
     <div class="xysLayout-left-logo" v-if="isCollapse">Xys</div>
     <div class="xysLayout-left-logo" v-else>xysLayout</div>
     <div class="xysMenu">
-      <el-menu
+      <treeMenu :tree="menuData" />
+      <!-- <el-menu
         default-active="/test"
         router
         background-color="#293c55"
@@ -22,16 +23,22 @@
           <i class="el-icon-menu"></i>
           <span slot="title">ccc</span>
         </el-menu-item>
-      </el-menu>
+      </el-menu> -->
     </div>
   </div>
 </template>
 
 <script>
+import treeMenu from "./treeMenu.js";
 export default {
+  components: { treeMenu },
   data() {
     return {
       isCollapse: false,
+      menuData: [
+        { name: "about1", path: "/about1" },
+        { name: "about2", path: "/about2" },
+      ],
     };
   },
   methods: {
@@ -66,10 +73,10 @@ export default {
     background: #293c55;
     height: calc(100vh - 60px);
     overflow: auto;
-    .el-menu {
+    /deep/ .el-menu {
       border: none;
     }
-    .el-menu-item.is-active {
+    /deep/ .el-menu-item.is-active {
       background: #e43c59 !important;
       color: #fff !important;
     }

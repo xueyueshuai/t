@@ -39,20 +39,14 @@ router.beforeEach((to, from, next) => {
       pro
         .then((res) => {
           console.log("res", res);
-
           window.isInitMenu = 1
-
-
-          for (let i = 1; i <= 50; i++) {
-            router.addRoute({ path: '/about' + i, name: 'About' + i, component: () => import('@/views/About.vue') })
-          }
+          // router.addRoute({ path: '', name: '', component: () => import('@/views/about') })
 
           // 触发重定向
           next({
             ...to,
             replace: true
           });
-
         })
         .catch((err) => {
           console.log("err", err);
