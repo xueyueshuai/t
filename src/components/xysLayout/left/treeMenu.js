@@ -44,7 +44,7 @@ const treeMenu = {
                   },
                   [
                     route.icon ? <i class={route.icon}></i> : null,
-                    <span slot="title">{route.name}</span>
+                    <span slot="title">{route.meta && route.meta.title || route.name}</span>
                   ]
                 ),
                 this.elements(route.children, r),
@@ -60,7 +60,7 @@ const treeMenu = {
               },
               [
                 route.icon ? <i class={route.icon}></i> : null,
-                <span slot="title">{route.name}</span>
+                <span slot="title">{route.meta && route.meta.title || route.name}</span>
               ]
             );
           } else {

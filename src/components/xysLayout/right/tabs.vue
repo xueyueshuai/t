@@ -73,7 +73,8 @@ export default {
       let index = this.tabList.findIndex((tag) => tag.path == currentPgae.path);
       if (index === -1) {
         this.tabList.push({
-          name: currentPgae.name,
+          name:
+            (currentPgae.meta && currentPgae.meta.title) || currentPgae.name,
           path: currentPgae.path,
         });
       }
