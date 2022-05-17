@@ -8,6 +8,10 @@ const treeMenu = {
         return [];
       },
     },
+    isCollapse: {
+      type: Boolean,
+      default: false
+    },
     defaultActive: {
       type: String,
       default: "home",
@@ -27,11 +31,14 @@ const treeMenu = {
               },
               [
                 r(
-                  "span",
+                  "template",
                   {
                     slot: "title",
                   },
-                  [route.name]
+                  [
+                    <i class="el-icon-location"></i>,
+                    <span slot="title">{route.name}</span>
+                  ]
                 ),
                 this.elements(route.children, r),
               ]
@@ -44,7 +51,10 @@ const treeMenu = {
                   index: route.path,
                 },
               },
-              [route.name]
+              [
+                route.icon ? <i class="el-icon-menu"></i> : null,
+                <span slot="title">{route.name}</span>
+              ]
             );
           } else {
             return null;
@@ -69,6 +79,7 @@ const treeMenu = {
           textColor: "#fff",
           activeTextColor: "#fff",
           defaultActive: this.defaultActive,
+          collapse: this.isCollapse
         },
         on: {
           select: this.onSelect,

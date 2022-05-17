@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import { isLogin, isInitMenu } from '../../src/utils/func.js'
+import { isLogin, isInitMenu, menusToRoutes } from '../../src/utils/func.js'
+import routesFromLocal from './routesFromLocal.js'
 
 
 Vue.use(VueRouter)
 let routes = [
-  { path: '/', name: 'Home', component: () => import('@/views/Home.vue') },
+  { path: '/home', name: 'Home', component: () => import('@/views/Home.vue') },
   { path: '/about', name: 'About', component: () => import('@/views/About.vue') },
 ]
 
@@ -40,7 +41,16 @@ router.beforeEach((to, from, next) => {
         .then((res) => {
           console.log("res", res);
           window.isInitMenu = 1
-          // router.addRoute({ path: '', name: '', component: () => import('@/views/about') })
+          let n = menusToRoutes(routesFromLocal, (component) => import('@/views/' + component))
+          console.log(n)
+          router.addRoute({
+            path: '/',
+            name:'Home',
+            component: ()=>import('@/components/xysLayout/emptyLayout.vue'),
+            children: n
+          })
+        
+         console.log(router.getRoutes())
 
           // 触发重定向
           next({

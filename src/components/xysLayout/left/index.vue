@@ -3,42 +3,21 @@
     <div class="xysLayout-left-logo" v-if="isCollapse">Xys</div>
     <div class="xysLayout-left-logo" v-else>xysLayout</div>
     <div class="xysMenu">
-      <treeMenu :tree="menuData" />
-      <!-- <el-menu
-        default-active="/test"
-        router
-        background-color="#293c55"
-        text-color="#ffffff"
-        :collapse="isCollapse"
-      >
-        <el-menu-item index="/">
-          <i class="el-icon-menu"></i>
-          <span slot="title">aaa</span>
-        </el-menu-item>
-        <el-menu-item :index="'/about' + i" v-for="i in 100" :key="i">
-          <i class="el-icon-menu"></i>
-          <span slot="title">{{ i }}</span>
-        </el-menu-item>
-        <el-menu-item index="/ccc">
-          <i class="el-icon-menu"></i>
-          <span slot="title">ccc</span>
-        </el-menu-item>
-      </el-menu> -->
+      <treeMenu :tree="menuData" :isCollapse="isCollapse" />
     </div>
   </div>
 </template>
 
 <script>
 import treeMenu from "./treeMenu.js";
+import routesFromLocal from "../../../router/routesFromLocal";
+
 export default {
   components: { treeMenu },
   data() {
     return {
       isCollapse: false,
-      menuData: [
-        { name: "about1", path: "/about1" },
-        { name: "about2", path: "/about2" },
-      ],
+      menuData: routesFromLocal,
     };
   },
   methods: {
