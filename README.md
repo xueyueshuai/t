@@ -1,19 +1,23 @@
 # xys-t-project
 
-## Project setup
+### 1 开始项目
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 2 运行
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 3 打包
 ```
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 配置说明
+点击查看 [配置说明](https://cli.vuejs.org/config/)
+
+##  todo-list
+- 中英文
+- 短信验证码
