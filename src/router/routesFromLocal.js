@@ -2,7 +2,7 @@ export default [
   {
     path: '/test',
     name: 'Test',
-    icon:'el-icon-s-home',
+    icon: 'el-icon-s-home',
     children: [
       {
         path: '/test/xys',
@@ -24,8 +24,13 @@ export default [
       },
     ]
   },
-  { path: '/aaa', icon: 'el-icon-menu', name: 'aaa', component: 'About' },
-  { path: '/bbb', icon: 'el-icon-user', name: 'bbb', component: 'About' },
-  { path: '/ccc', icon: 'el-icon-s-home', name: 'ccc', component: 'About' },
+  {
+    path: '/example',
+    icon: 'el-icon-menu',
+    name: '例子',
+    children: [
+      { path: '/example/sendCode', name: 'exampleSendCode', component: 'example/sendCode' },
+    ]
+  },
 
 ]

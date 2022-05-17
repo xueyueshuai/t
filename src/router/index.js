@@ -47,7 +47,7 @@ router.beforeEach((to, from, next) => {
           console.log(n)
           router.addRoute({
             path: '/',
-            name: 'Home',
+            redirect: '/test/xys/test1',
             component: () => import('@/components/xysLayout/emptyLayout.vue'),
             children: n
           })
