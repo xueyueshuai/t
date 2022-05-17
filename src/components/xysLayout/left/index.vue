@@ -34,6 +34,8 @@ export default {
   width: 200px;
   height: 100vh;
   overflow: auto;
+
+  transition: width .5s; /*transition: all 2s*/
   &.isSmall {
     width: 66px;
   }

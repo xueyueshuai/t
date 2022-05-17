@@ -3,8 +3,8 @@ import VueRouter from 'vue-router'
 
 import { isLogin, isInitMenu, menusToRoutes } from '../../src/utils/func.js'
 import routesFromLocal from './routesFromLocal.js'
-
-
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css'
 Vue.use(VueRouter)
 let routes = [
   { path: '/home', name: 'Home', component: () => import('@/views/Home.vue') },
@@ -24,6 +24,8 @@ VueRouter.prototype.push = function push(location) {
 
 // 路由守卫
 router.beforeEach((to, from, next) => {
+  NProgress.start()
+
   // 判断是否登录
   if (isLogin()) {
     // 判断是否已经注册动态路由
@@ -45,12 +47,12 @@ router.beforeEach((to, from, next) => {
           console.log(n)
           router.addRoute({
             path: '/',
-            name:'Home',
-            component: ()=>import('@/components/xysLayout/emptyLayout.vue'),
+            name: 'Home',
+            component: () => import('@/components/xysLayout/emptyLayout.vue'),
             children: n
           })
-        
-         console.log(router.getRoutes())
+
+          console.log(router.getRoutes())
 
           // 触发重定向
           next({
@@ -76,5 +78,11 @@ router.beforeEach((to, from, next) => {
     });
   }
 });
+
+router.afterEach(() => {
+  setTimeout(() => {
+    NProgress.done()
+  }, 300)
+})
 
 export default router

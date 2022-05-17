@@ -12,10 +12,17 @@ const treeMenu = {
       type: Boolean,
       default: false
     },
-    defaultActive: {
-      type: String,
-      default: "home",
-    },
+
+  },
+  data() {
+    return {
+      defaultActive: ''
+    }
+  },
+  watch: {
+    '$route'() {
+      this.defaultActive = this.$route.path
+    }
   },
   methods: {
     elements(tree, r) {
@@ -88,6 +95,7 @@ const treeMenu = {
       this.elements(this.tree, r)
     );
   },
+
 };
 
 export default treeMenu
