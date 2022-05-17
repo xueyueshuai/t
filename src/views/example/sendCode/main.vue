@@ -6,7 +6,7 @@
 
 <script>
 import demoCode from "./code.vue";
-let code = require("!../../vueSourceLoader.js!./code.vue").default;
+let code = require("!../../../vueSourceLoader.js!./code.vue").default;
 export default {
   components: {
     demoCode,

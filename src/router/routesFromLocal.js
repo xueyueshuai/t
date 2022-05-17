@@ -29,7 +29,7 @@ export default [
     icon: 'el-icon-menu',
     name: '例子',
     children: [
-      { path: '/example/sendCode', name: 'exampleSendCode', component: 'example/sendCode' },
+      { path: '/example/sendCode', name: 'exampleSendCode', component: 'example/sendCode/main' },
     ]
   },
 
