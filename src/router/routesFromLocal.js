@@ -29,8 +29,8 @@ export default [
     icon: 'el-icon-menu',
     name: '例子',
     children: [
-      { path: '/example/sendCode', name: 'exampleSendCode', component: 'example/sendCode/main', meta: { title: '发送验证码' } },
-      { path: '/example/fullScreen', name: 'exampleFullScreen', component: 'example/fullScreen/main', meta: { title: '全屏' } },
+      { path: '/example/sendCode', name: 'exampleSendCode', component: 'example/sendCode/main', meta: { title: '001发送验证码' } },
+      { path: '/example/fullScreen', name: 'exampleFullScreen', component: 'example/fullScreen/main', meta: { title: '002全屏' } },
     ]
   },
 
