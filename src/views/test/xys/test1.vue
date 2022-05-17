@@ -1,8 +1,6 @@
 <template>
-  <div>xys-test1
-
-
-
+  <div>
+    <h1>欢迎来的 xys的 test demo</h1>
   </div>
 </template>
 
