@@ -84,7 +84,6 @@ export default {
 
     // 点击
     tabClick(tab) {
-      console.log(tab);
       this.$router.push(tab.name);
       this.active = tab.name;
     },
@@ -112,7 +111,6 @@ export default {
     },
     // 右键
     openContextMenu(e) {
-      console.log(e);
       if (e.srcElement.id) {
         this.contextMenu.name = e.srcElement.id.substr(4);
         this.contextMenu.menuLeft = e.clientX - 45;

@@ -114,7 +114,6 @@ export default {
     //提交
     submitForm() {
       this.$refs.myForm.validate((valid) => {
-        console.log(valid);
         if (valid) {
           console.log("提交");
         }

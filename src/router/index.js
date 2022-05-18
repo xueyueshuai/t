@@ -41,18 +41,14 @@ router.beforeEach((to, from, next) => {
 
       pro
         .then((res) => {
-          console.log("res", res);
           window.isInitMenu = 1
           let n = menusToRoutes(routesFromLocal, (component) => import('@/views/' + component))
-          console.log(n)
           router.addRoute({
             path: '/',
             redirect: '/test/xys/test1',
             component: () => import('@/components/xysLayout/emptyLayout.vue'),
             children: n
           })
-
-          console.log(router.getRoutes())
 
           // 触发重定向
           next({
