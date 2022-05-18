@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0af83b"],{"0f3b":function(e,t,n){"use strict";n.r(t);var c=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},r=[function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",[n("h1",[e._v("欢迎来的 xys的 test demo")])])}],s={},u=s,a=n("2877"),f=Object(a["a"])(u,c,r,!1,null,"0f935210",null);t["default"]=f.exports}}]);
+//# sourceMappingURL=chunk-2d0af83b.236dc198.js.map
