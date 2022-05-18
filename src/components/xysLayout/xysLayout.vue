@@ -12,12 +12,8 @@
           <i class="el-icon-s-fold" @click="isCollapse = true" v-else></i>
 
           <el-menu style="border: none" class="el-menu-demo" mode="horizontal">
-            <el-menu-item index="1">处理中心</el-menu-item>
-            <el-menu-item index="2">消息中心</el-menu-item>
-            <el-menu-item index="3">消息中心</el-menu-item>
-            <el-menu-item index="4">消息中心</el-menu-item>
-            <el-menu-item index="5">消息中心</el-menu-item>
-            <el-menu-item index="6">消息中心</el-menu-item>
+            <el-menu-item index="1">功能按钮1</el-menu-item>
+            <el-menu-item index="2">功能按钮2</el-menu-item>
           </el-menu>
         </div>
         <div class="header-right">
@@ -36,7 +32,7 @@
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>个人中心</el-dropdown-item>
-              <el-dropdown-item>推出登录</el-dropdown-item>
+              <el-dropdown-item>退出登录</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
