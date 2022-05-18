@@ -20,4 +20,3 @@ npm run build
 
 ##  todo-list
 - 中英文
-- 短信验证码
