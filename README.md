@@ -20,3 +20,6 @@ npm run build
 
 ##  todo-list
 - 中英文
+- 自定义 v-model
+- form验证每一项 （自定义的项）
+- extend 全局弹框
