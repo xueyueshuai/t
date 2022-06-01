@@ -1,12 +1,11 @@
-![logo](_media/icon.svg)
 
-# docsify <small>3.5</small>
+# 薛月帅的文档 <small>0601A</small>
 
-> 一个神奇的文档网站生成器。
+> 记录需要说明的事情。
 
-- 简单、轻便 (压缩后 ~21kB)
-- 无需生成 html 文件
+- 山不向我走来,我便向山走去
+- 星星之火,可以燎原
 - 众多主题
 
-[GitHub](https://github.com/docsifyjs/docsify/)
+[GitHub](https://github.com/xueyueshuai)
 [Get Started](/start/)

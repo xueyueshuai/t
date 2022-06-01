@@ -22,4 +22,4 @@ npm run build
 - 中英文 vue中使用i18n
 - 自定义 v-model
 - form 验证每一项 （自定义的项）
-- extend 全局弹框
+- extend 全局弹框 
