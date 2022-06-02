@@ -15,9 +15,8 @@ http://43.138.86.171:8111/##/login
 
 https://www.clougence.com/cc-doc/quick/quick_start/
 
-## 4) 线上mysql copy-》政务外网 mysql
+## 4) 线上mysql copy-》政务外网 mysql（5个小时）
 !>mysql版本一定要一致
-
 
 ## 5) 修改为最终字段（字段和类型） （5小时）
 
