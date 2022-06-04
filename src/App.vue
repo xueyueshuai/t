@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <xysLayout />
+    <!-- <xysLayout /> -->
+    <router-view></router-view>
   </div>
 </template>
 
