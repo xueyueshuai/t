@@ -66,8 +66,10 @@ export default {
     document.addEventListener("click", function (e) {
       that.contextMenu.isShow = false;
     });
+    this.whenRouteChange()
   },
   methods: {
+    // 当route 发生改变时候
     whenRouteChange() {
       let currentPgae = this.$route;
       let index = this.tabList.findIndex((tag) => tag.path == currentPgae.path);

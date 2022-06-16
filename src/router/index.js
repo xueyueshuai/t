@@ -1,19 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import { isLogin, isInitMenu, menusToRoutes } from '../../src/utils/func.js'
+// 功能函数
+import { isLogin, isInitMenu, menusToRoutes } from '@/utils/func.js'
+
+// 静态路由
 import routesFromLocal from './routesFromLocal.js'
+import routesStatic from './routesStatic.js'
+
+// 进度条
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css'
-Vue.use(VueRouter)
-let routes = [
-  { path: '/home', name: 'Home', component: () => import('@/views/Home.vue') },
-  { path: '/about', name: 'About', component: () => import('@/views/About.vue') },
-  { path: '/login', name: 'login', component: () => import('@/views/login.vue') },
-]
 
+// router
+Vue.use(VueRouter)
 const router = new VueRouter({
-  routes
+  routesStatic
 })
 
 // 去除无意义的报错
@@ -22,8 +24,7 @@ VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 
-
-// 路由守卫
+// 路由前置守卫
 router.beforeEach((to, from, next) => {
   NProgress.start()
 
@@ -34,21 +35,23 @@ router.beforeEach((to, from, next) => {
       next();
     } else {
       // new Promise()
-      let pro = new Promise(function (resolve, reject) {
+      let getRoutesFromSever = new Promise(function (resolve, reject) {
         setTimeout(() => {
           resolve("aaa");
         }, 1000);
       });
 
-      pro
+      getRoutesFromSever
         .then((res) => {
           window.isInitMenu = 1
-          let n = menusToRoutes(routesFromLocal, (component) => import('@/views/' + component))
+
+          // 此步骤为核心 将获取到的路由 动态 添加到本地路由中
+          let newRoutes = menusToRoutes(routesFromLocal, (component) => import('@/views/' + component))
           router.addRoute({
             path: '/',
             redirect: '/test/xys/test1',
             component: () => import('@/components/xysLayout/xysLayout.vue'),
-            children: n
+            children: newRoutes
           })
 
           // 触发重定向
@@ -76,6 +79,7 @@ router.beforeEach((to, from, next) => {
   }
 });
 
+// 路由后置守卫
 router.afterEach(() => {
   setTimeout(() => {
     NProgress.done()
