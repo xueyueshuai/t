@@ -3,22 +3,20 @@
     <el-tabs
       closable
       v-model="active"
-      @contextmenu.prevent.native="openContextMenu($event)"
       type="card"
+      @contextmenu.prevent.native="openContextMenu($event)"
       @tab-remove="removeTab"
       @tab-click="tabClick"
     >
       <el-tab-pane
-        class="isActive"
         v-for="item in tabList"
         :key="item.name"
         :label="item.name"
         :name="item.path"
-      >
-      </el-tab-pane>
+      />
     </el-tabs>
 
-    <!-- 右键菜单 -->
+    <!-- 右键弹出的菜单 -->
     <ul
       v-show="contextMenu.isShow"
       :style="{ left: contextMenu.menuLeft + 'px', top: '100px' }"
@@ -35,7 +33,7 @@
       >
         刷新页面
       </li>
-      <div x-arrow="" class="popper__arrow" style="left: 44px"></div>
+      <div class="popper__arrow" style="left: 44px"></div>
     </ul>
   </div>
 </template>
@@ -66,7 +64,7 @@ export default {
     document.addEventListener("click", function (e) {
       that.contextMenu.isShow = false;
     });
-    this.whenRouteChange()
+    this.whenRouteChange();
   },
   methods: {
     // 当route 发生改变时候
