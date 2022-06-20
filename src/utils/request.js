@@ -3,13 +3,13 @@ import router from '@/router'
 
 import { Message } from 'element-ui'
 
-const service = axios.create({
+const myAxiosInstance = axios.create({
   // timeout: 6000,
 })
 
-service.interceptors.request.use(
+myAxiosInstance.interceptors.request.use(
   requestConfig => {
-    requestConfig.baseURL = 'http://xxx.com'
+    requestConfig.baseURL = 'http://127.0.0.1:9202/api/v1_0_0.atest/test27'
     if (localStorage.getItem('token')) {
       requestConfig.headers.authorization_token = localStorage.getItem('token') || '';
     }
@@ -20,20 +20,25 @@ service.interceptors.request.use(
   err => {
     Message({
       type: 'error',
-      message: '请求超时!',
+      message: '请求异常',
       duration: 4 * 1000
     })
     return Promise.reject(err);
   }
 )
 
-service.interceptors.response.use(
+myAxiosInstance.interceptors.response.use(
   response => {
+    console.log('response', response)
+
     const res = response.data
     if (res.code === 200) {
       // 成功响应
-      return Promise.resolve(res)
-    } else if (res.code === 201) {
+      // return res; 或 return Promise.resolve(res);
+      return res
+    }
+
+    if (res.code === 201) {
       // 消息提示
       Message({
         type: 'error',
@@ -41,14 +46,17 @@ service.interceptors.response.use(
         duration: 4 * 1000
       })
       return Promise.reject(res)
-    } else if (res.code === 202) {
+    }
+
+    if (res.code === 202) {
       // 登录令牌失效
       // 清除登录信息 todo...
       // 去往登录页面 todo...
-      return Promise.reject(res)
-    } else {
+      console.log('清除登录信息 todo... , 去往登录页面 todo...');
       return Promise.reject(res)
     }
+
+    return Promise.reject(res)
   },
   error => {
     Message({
@@ -60,4 +68,7 @@ service.interceptors.response.use(
   }
 )
 
-export default service
+
+
+
+export default myAxiosInstance
