@@ -5,7 +5,7 @@
 
 - 山不向我走来,我便向山走去
 - 星星之火,可以燎原
-- 众多主题
+<!-- - 众多主题 -->
 
 [GitHub](https://github.com/xueyueshuai)
 [Get Started](/start/)
